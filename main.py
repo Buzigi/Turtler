@@ -2,6 +2,7 @@ from turtle import Turtle, Screen
 import time
 from car import Car
 import random
+from scoreboard import Score
 
 cars = []
 
@@ -9,6 +10,14 @@ screen = Screen()
 screen.setup(600, 600)
 screen.tracer(0)
 screen.colormode(255)
+
+score = Score()
+
+
+def create_car():
+    if bool(random.getrandbits(1)):
+        car = Car()
+        cars.append(car)
 
 
 game_is_on = True
@@ -18,9 +27,7 @@ while game_is_on:
     time.sleep(0.05)
     counter += 1
     if counter == 10:
-        if bool(random.getrandbits(1)):
-            car = Car()
-            cars.append(car)
+        create_car()
         counter = 0
     for c in cars:
         if c.xcor() > -330:
