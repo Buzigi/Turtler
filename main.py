@@ -3,6 +3,7 @@ import time
 from car import Car
 import random
 from scoreboard import Score
+from frogger import Frogger
 
 cars = []
 
@@ -10,8 +11,13 @@ screen = Screen()
 screen.setup(600, 600)
 screen.tracer(0)
 screen.colormode(255)
+screen.listen()
+
 
 score = Score()
+frogger = Frogger()
+
+screen.onkey(frogger.move, "Up")
 
 
 def create_car():

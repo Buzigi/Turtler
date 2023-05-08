@@ -12,5 +12,5 @@ class Score(Turtle):
         self.write_score()
 
     def write_score(self):
-        self.goto(0, 200)
-        self.write(f"Level: {self.level}", align="center", font=("Courier", 60, "normal"))
+        self.goto(0, 240)
+        self.write(f"Level: {self.level}", align="center", font=("Courier", 40, "normal"))
